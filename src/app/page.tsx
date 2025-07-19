@@ -15,7 +15,7 @@ export default function Home() {
           <div className="navbar-content">
             <div className="navbar-logo"> автомат Никонова - 1987</div>
             <div className="navbar-links">
-              <a href="#hero" className="navbar-link">Home</a>
+              <a href="#tdoll" className="navbar-link">Home</a>
               <a href="#specs" className="navbar-link">About</a>
               <a href="#history" className="navbar-link">Production History</a>
               <a href="#variants" className="navbar-link">Gallery</a>
@@ -25,25 +25,25 @@ export default function Home() {
       </nav>
 
 {  /*Anna Nikonova Vid BG*/}
-      <section id="hero" className="hero-section">
+      <section id="tdoll" className="tdoll-section">
       <video 
   autoPlay 
   muted 
   loop 
-  className="hero-video"
+  className="tdoll-video"
 >
   <source src="/AN94.mp4" type="video/mp4" />
 </video>
-        <div className="hero-content">
-          <h1 className="hero-title">
+        <div className="tdoll-content">
+          <h1 className="tdoll-title">
             АН-94
-            <span className="hero-subtitle">«Абака́н»</span>
+            <span className="tdoll-subtitle">«Абака́н»</span>
           </h1>
-          <p className="hero-description">
+          <p className="tdoll-description">
             CODENAME "ALVA"
           </p>
-          <div className="hero-badge">
-            <p className="hero-badge-text">ESTABLISHED 1994</p>
+          <div className="tdoll-badge">
+            <p className="tdoll-badge-text">ESTABLISHED 1994</p>
           </div>
         </div>
       </section>

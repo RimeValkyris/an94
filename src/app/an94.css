@@ -71,8 +71,8 @@
   color: #d1d5db;
 }
 
-/* Hero Section Styles */
-.hero-section {
+/* T-Doll Section Styles */
+.tdoll-section {
   position: relative;
   height: 100vh;
   display: flex;
@@ -80,7 +80,7 @@
   justify-content: center;
 }
 
-.hero-video {
+.tdoll-video {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -88,7 +88,7 @@
   object-fit: cover;
 }
 
-.hero-content {
+.tdoll-content {
   position: relative;
   z-index: 20;
   text-align: center;
@@ -97,7 +97,7 @@
   padding: 0 1rem;
 }
 
-.hero-title {
+.tdoll-title {
   font-size: 3.75rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
@@ -105,17 +105,17 @@
 }
 
 @media (min-width: 768px) {
-  .hero-title {
+  .tdoll-title {
     font-size: 6rem;
   }
 }
 
-.hero-subtitle {
+.tdoll-subtitle {
   display: block;
   color: #9ca3af;
 }
 
-.hero-description {
+.tdoll-description {
   font-size: 1.25rem;
   color: #d1d5db;
   margin-bottom: 2rem;
@@ -123,18 +123,18 @@
 }
 
 @media (min-width: 768px) {
-  .hero-description {
+  .tdoll-description {
     font-size: 1.5rem;
   }
 }
 
-.hero-badge {
+.tdoll-badge {
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 1rem 2rem;
   display: inline-block;
 }
 
-.hero-badge-text {
+.tdoll-badge-text {
   font-family: 'Courier New', monospace;
   font-size: 0.875rem;
   letter-spacing: 0.1em;
