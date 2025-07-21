@@ -71,6 +71,94 @@
   color: #d1d5db;
 }
 
+/* Tactical Navbar Styles */
+.nav-tactical-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 12px;
+  color: #9ca3af;
+  text-decoration: none;
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  position: relative;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 50%);
+}
+
+.nav-tactical-link:hover {
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.2);
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  transform: translateY(-1px);
+}
+
+.nav-tactical-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-tactical-link:hover::before {
+  opacity: 1;
+}
+
+.nav-code {
+  color: #ef4444;
+  font-weight: bold;
+  font-size: 0.625rem;
+  margin-bottom: 2px;
+  letter-spacing: 0.05em;
+}
+
+.nav-tactical-link:hover .nav-code {
+  color: #fca5a5;
+}
+
+/* Mobile Navigation Styles */
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  color: #9ca3af;
+  text-decoration: none;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 50%);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:active {
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.2);
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+}
+
+.mobile-nav-link .nav-code {
+  color: #ef4444;
+  font-weight: bold;
+  font-size: 0.75rem;
+  margin-right: 12px;
+  min-width: 20px;
+  letter-spacing: 0.05em;
+}
+
+.mobile-nav-link:hover .nav-code {
+  color: #fca5a5;
+}
+
 /* T-Doll Section Styles */
 .tdoll-section {
   position: relative;

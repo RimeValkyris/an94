@@ -1,33 +1,168 @@
-export const metadata = {
-  title: "AN94 Rifle",
-  description: "Information about the AN94 rifle in Girls Frontline",
-};
+"use client";
+
 import Image from "next/image";
 import "./an94.css";
 import { FlickeringGrid } from "@/components/ui/flickering-grid";
 import { Timeline } from "@/components/ui/timeline";
+import { BentoGallery } from "@/components/ui/gallery-grid";
+import { useState } from "react";
 
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
 <div className="page-container">
-      <nav className="navbar">
-        <div className="navbar-container">
-          <div className="navbar-content">
-            <div className="navbar-logo"> автомат Никонова - 1987</div>
-            <div className="navbar-links">
-              <a href="#tdoll" className="navbar-link">Home</a>
-              <a href="#specs" className="navbar-link">About</a>
-              <a href="#history" className="navbar-link">Production History</a>
-              <a href="#variants" className="navbar-link">Mission Timeline</a>
-              <a href="#variants" className="navbar-link">Gallery</a>
+
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
+        <div className="relative">
+        
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+          
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="flex items-center justify-between h-16">
+              
+              <div className="flex items-center space-x-4">
+                <div className="flex items-center">
+                  <div className="w-8 h-8 bg-red-600 flex items-center justify-center text-white font-bold text-sm mr-3">
+                    АН
+                  </div>
+                  <div className="text-white font-mono text-sm">
+                    <div className="font-bold tracking-wider">NIKONOV AN-94</div>
+                    <div className="text-xs text-gray-400">CLASSIFICATION: АБАКАН</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Center - Navigation Links */}
+              <div className="hidden md:flex items-center space-x-1">
+                <a href="#tdoll" className="nav-tactical-link">
+                  <span className="nav-code">01</span>
+                  <span>HOME</span>
+                </a>
+                <a href="#specs" className="nav-tactical-link">
+                  <span className="nav-code">02</span>
+                  <span>INTEL</span>
+                </a>
+                <a href="#history" className="nav-tactical-link">
+                  <span className="nav-code">03</span>
+                  <span>HISTORY</span>
+                </a>
+                <a href="#variants" className="nav-tactical-link">
+                  <span className="nav-code">04</span>
+                  <span>MISSIONS</span>
+                </a>
+                <a href="#gallery" className="nav-tactical-link">
+                  <span className="nav-code">05</span>
+                  <span>ARCHIVE</span>
+                </a>
+              </div>
+
+              <div className="flex items-center space-x-4">
+                <div className="hidden lg:flex items-center space-x-3 text-xs font-mono">
+                  <div className="flex items-center space-x-1">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-green-400">OPERATIONAL</span>
+                  </div>
+                  <div className="text-gray-500">|</div>
+                  <div className="text-gray-400">EST. 1987</div>
+                </div>
+                
+        
+                <button 
+                  onClick={toggleMobileMenu}
+                  className={`md:hidden text-white hover:text-gray-300 transition-colors p-2 rounded ${
+                    mobileMenuOpen ? 'bg-white/20' : 'bg-transparent'
+                  }`}
+                  type="button"
+                  aria-label="Toggle mobile menu"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} 
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </nav>
 
-{  /*Anna Nikonova Vid BG*/}
-      <section id="tdoll" className="tdoll-section">
+    
+      {mobileMenuOpen && (
+        <div className="fixed top-16 left-0 right-0 z-50 md:hidden">
+          <div className="bg-black/95 backdrop-blur-md border-b border-white/10 shadow-xl">
+            <div className="px-4 py-6 space-y-4">
+              <a 
+                href="#tdoll" 
+                className="mobile-nav-link"
+                onClick={closeMobileMenu}
+              >
+                <span className="nav-code">01</span>
+                <span>HOME</span>
+              </a>
+              <a 
+                href="#specs" 
+                className="mobile-nav-link"
+                onClick={closeMobileMenu}
+              >
+                <span className="nav-code">02</span>
+                <span>INTEL</span>
+              </a>
+              <a 
+                href="#history" 
+                className="mobile-nav-link"
+                onClick={closeMobileMenu}
+              >
+                <span className="nav-code">03</span>
+                <span>HISTORY</span>
+              </a>
+              <a 
+                href="#variants" 
+                className="mobile-nav-link"
+                onClick={closeMobileMenu}
+              >
+                <span className="nav-code">04</span>
+                <span>MISSIONS</span>
+              </a>
+              <a 
+                href="#gallery" 
+                className="mobile-nav-link"
+                onClick={closeMobileMenu}
+              >
+                <span className="nav-code">05</span>
+                <span>ARCHIVE</span>
+              </a>
+              
+           
+              <div className="border-t border-white/20 pt-4">
+                <div className="flex items-center justify-between text-xs font-mono text-gray-400">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-green-400">OPERATIONAL</span>
+                  </div>
+                  <span>EST. 1987</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+
+      <section id="tdoll" className="tdoll-section pt-16">
       <video 
   autoPlay 
   muted 
@@ -133,7 +268,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Mission Timeline Section */}
+   
       <section id="variants" className="specs-section">
         <div className="specs-container">
           <h2 className="specs-title relative z-10">MISSION TIMELINE</h2>
@@ -294,8 +429,127 @@ export default function Home() {
       </section>
 
 
+      <section id="gallery" className="specs-section">
+        <div className="specs-container">
+          <h2 className="specs-title relative z-10">GALLERY</h2>
+          <div className="relative z-10 mb-8">
+          </div>
+          <div className="relative z-10">
+            <BentoGallery items={[
+              {
+                id: 1,
+                imageUrl: "https://i.scdn.co/image/ab6761610000e5eb0f9e913afb90d4b58b6e8ebb",
+                className: "md:col-span-2 md:row-span-2"
+              },
+              {
+                id: 2,
+                imageUrl: "https://assets.pewresearch.org/wp-content/uploads/sites/12/2014/10/FT_14.10.15_berlinWallPhoto.jpg"
+              },
+              {
+                id: 3,
+                imageUrl: "https://artrockstore.com/cdn/shop/products/artrockstore-kino-poslednii-geroi-album.jpg?v=1683170709"
+              },
+              {
+                id: 4,
+                imageUrl: "https://static.themoscowtimes.com/image_archive/1360/46/i268590_Viktor-tsoi-death-anniversary.jpg",
+                className: "md:col-span-2"
+              },
+              {
+                id: 5,
+                imageUrl: "https://thinlineweapons.com/wiki/images/thumb/1/12/NikonovGennady.jpg/300px-NikonovGennady.jpg",
+              },
+              {
+                id: 6,
+                imageUrl: "https://pbs.twimg.com/media/GHoUtXNWcAE3qBL.jpg",
+              },
+              {
+                id: 7,
+                imageUrl: "https://media.discordapp.net/attachments/1203994284974547016/1396180659755548804/mKiNaRx4RvlSLO7rsg0aYgtQe-yPeKIsxXCiq_CCUvwoozTzMWk_ftwMlPi3eD42Izq_ioOM92hZJ1_QqOEqmg.png?ex=687d2611&is=687bd491&hm=196ece945cc47a15a788f47b9394962f3505b83e02ca8cdb0ec81e6c5731f089&=&format=webp&quality=lossless"
+              },
+              {
+                id: 8,
+                imageUrl: "https://media.discordapp.net/attachments/1203994284974547016/1396181381821894816/Girls_Frontline_2025-05-05-15-18-43.jpg?ex=687d26bd&is=687bd53d&hm=b5a5e73a56b3cc2e1c40704df31397ab3b58a2789b0b3a1e39061e209d7570c7&=&format=webp&width=2895&height=856",
+                className: "md:col-span-2"
+              }
+            ]} />
+          </div>
+        </div>
+      </section>
 
+ 
+      <footer className="relative bg-black border-t border-white/20">
+        <FlickeringGrid
+          className="absolute inset-0 z-0"
+          squareSize={4}
+          gridGap={15}
+          flickerChance={0.05}
+          color="rgba(255, 255, 255, 0.05)"
+          width={1600}
+          height={300}
+        />
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            
+         
+            <div className="md:col-span-2">
+              <h3 className="text-xl font-bold text-white mb-4 tracking-wider">
+                АН-94 «АБАКА́Н»
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                Elite T-Doll from Task Force DEFY. Developed in the Neo Soviet Union during the 2060s.
+                <br></br>
+                <i>"Пожелай мне удачи в битве, пожелай мне"</i>
+              </p>
+              <div className="flex items-center space-x-4 text-xs text-gray-500">
+                <span>ESTABLISHED 1994</span>
+                <span>•</span>
+                <span>T-DOLL 2060s</span>
+                <span>•</span>
+                <span>STATUS: ACTIVE</span>
+              </div>
+            </div>
 
+        
+            <div>
+              <h4 className="text-white font-semibold mb-3 text-sm tracking-wider">NAVIGATION</h4>
+              <ul className="space-y-2 text-xs text-gray-400">
+                <li><a href="#tdoll" className="hover:text-white transition-colors">Home</a></li>
+                <li><a href="#specs" className="hover:text-white transition-colors">About</a></li>
+                <li><a href="#history" className="hover:text-white transition-colors">Production History</a></li>
+                <li><a href="#variants" className="hover:text-white transition-colors">Mission Timeline</a></li>
+                <li><a href="#gallery" className="hover:text-white transition-colors">Gallery</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-white font-semibold mb-3 text-sm tracking-wider">SPECIFICATIONS</h4>
+              <ul className="space-y-2 text-xs text-gray-400">
+                <li>Caliber: 5.45×39mm</li>
+                <li>Action: Gas-operated</li>
+                <li>Rate of Fire: 600 RPM</li>
+                <li>Effective Range: 500m</li>
+                <li>Weight: 3.85 kg</li>
+              </ul>
+            </div>
+          </div>
+
+    
+          <div className="border-t border-white/10 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
+            <div className="text-xs text-gray-500 mb-4 md:mb-0">
+              © 2025 AN-94 Archive. Classified military documentation - Task Force DEFY.
+            </div>
+            
+            <div className="flex items-center space-x-6 text-xs text-gray-500">
+              <span className="font-mono">автомат Никонова - 1987</span>
+              <div className="flex items-center space-x-1">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span>OPERATIONAL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
 
 </div>
 
