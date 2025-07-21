@@ -198,7 +198,7 @@ export default function Home() {
           height={600}
         />
 
-        {/* About Section*/}
+  {/* About Section*/}
 
         <div className="specs-container">
           <h2 className="specs-title relative z-10">ABOUT</h2>
