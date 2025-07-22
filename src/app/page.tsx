@@ -234,6 +234,8 @@ export default function Home() {
         </div>
       </section>
 
+ {/* Production History */}
+
  <section id="history" className="specs-section">
         <div className="specs-container">
           <h2 className="specs-title relative z-10">PRODUCTION HISTORY</h2>
@@ -268,7 +270,8 @@ export default function Home() {
         </div>
       </section>
 
-   
+    {/* Mission Timeline */}
+    
       <section id="variants" className="specs-section">
         <div className="specs-container">
           <h2 className="specs-title relative z-10">MISSION TIMELINE</h2>
